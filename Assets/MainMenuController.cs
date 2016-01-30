@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour {
 
     public GameObject titleGameObject;
 
     public Button playButton, quitButton;
+
+    public Sequence buttonSequence;
 
     void Awake()
     {
@@ -23,8 +26,7 @@ public class MainMenuController : MonoBehaviour {
 
     public void LaunchNewGame()
     {
-        // ^
-        // |
+        SceneManager.LoadScene(1);
     }
 
     public void Exit()
@@ -45,16 +47,11 @@ public class MainMenuController : MonoBehaviour {
 
     public void AnimateOnHoverButton(Button button)
     {
-        Sequence sequence = DOTween.Sequence();
-        sequence.Append(button.transform.DOScale(1.1f, 0.8f));
-        sequence.PrependInterval(0.4f);
-        sequence.Insert(0, button.transform.DOShakeScale(0.4f, 0.3f, 2));
-
-        sequence.Play();
+        button.transform.DOScale(1.1f, 0.4f);
     }
 
     public void AnimateOnHoverExitButton(Button button)
     {
-        button.transform.DOScale(1.0f, 0.2f);
+        button.transform.DOScale(1.0f, 0.4f);
     }
 }
