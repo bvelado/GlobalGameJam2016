@@ -1,14 +1,14 @@
 ﻿public static class Monsters {
     public const string Monster0 = "Sprites/Monsters/monster0";
-    public const string Monster1 = "Sprites/Monsters/monster1";
-    public const string Monster2 = "Sprites/Monsters/monster2";
-    public const string Monster3 = "Sprites/Monsters/monster3";
-    public const string Monster4 = "Sprites/Monsters/monster4";
-    public const string Monster5 = "Sprites/Monsters/monster5";
-    public const string Monster6 = "Sprites/Monsters/monster6";
-    public const string Monster7 = "Sprites/Monsters/monster7";
-    public const string Monster8 = "Sprites/Monsters/monster8";
-    public const string Monster9 = "Sprites/Monsters/monster9";
+    public const string Monster1 = "Sprites/Monsters/monster01";
+    public const string Monster2 = "Sprites/Monsters/monster02";
+    public const string Monster3 = "Sprites/Monsters/monster03";
+    public const string Monster4 = "Sprites/Monsters/monster04";
+    public const string Monster5 = "Sprites/Monsters/monster05";
+    public const string Monster6 = "Sprites/Monsters/monster06";
+    public const string Monster7 = "Sprites/Monsters/monster07";
+    public const string Monster8 = "Sprites/Monsters/monster08";
+    public const string Monster9 = "Sprites/Monsters/monster09";
     public const string Monster10 = "Sprites/Monsters/monster10";
     public const string Monster11 = "Sprites/Monsters/monster11";
     public const string Monster12 = "Sprites/Monsters/monster12";
