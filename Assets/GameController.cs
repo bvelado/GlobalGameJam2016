@@ -35,8 +35,11 @@ public class GameController : MonoBehaviour {
             // Slots
             .Add(pool.CreateSystem<CreateSlotsSystem>())
             .Add(pool.CreateSystem<RenderSlotsSystem>())
-            
-            // Destroy
+
+            // Inputs
+            .Add(pool.CreateSystem<ProcessInputSystem>())
+
+            // Destroys
             .Add(pool.CreateSystem<DestroySystem>())
 
             // Test

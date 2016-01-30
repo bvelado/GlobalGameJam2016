@@ -1,3 +1,3 @@
 ﻿public enum InputIntent {
-    ScrollRight, ScrollLeft, Fuse
+    ScrollRight, ScrollLeft, Fuse, AddMonsterSlot
 }

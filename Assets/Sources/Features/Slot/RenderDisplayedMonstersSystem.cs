@@ -22,10 +22,6 @@ public class RenderDisplayedMonstersSystem : IReactiveSystem, ISetPool
 
     public void Execute(List<Entity> entities)
     {
-        Debug.Log(_group.count);
-        foreach (var e in entities)
-        {
-
-        }
+        
     }
 }
