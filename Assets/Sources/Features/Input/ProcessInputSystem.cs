@@ -39,19 +39,7 @@ public class ProcessInputSystem : IReactiveSystem, ISetPool
 
                     break;
 
-                case InputIntent.AddMonsterSlot1:
-
-                    break;
-
-                case InputIntent.AddMonsterSlot2:
-
-                    break;
-
-                case InputIntent.AddMonsterSlot3:
-
-                    break;
-
-                case InputIntent.AddMonsterSlot4:
+                case InputIntent.AddMonsterSlot:
 
                     break;
             }
