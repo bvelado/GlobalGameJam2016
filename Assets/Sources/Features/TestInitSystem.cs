@@ -1,6 +1,7 @@
 ﻿using System;
 using Entitas;
 using UnityEngine;
+using System.Collections;
 
 public class TestInitSystem : IInitializeSystem, ISetPool
 {
@@ -13,6 +14,6 @@ public class TestInitSystem : IInitializeSystem, ISetPool
 
     public void Initialize()
     {
-        
+
     }
 }

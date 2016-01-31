@@ -22,11 +22,12 @@ public class AddSlotPositionSystem : IReactiveSystem, ISetPool
 
     public void Execute(List<Entity> entities)
     {
-        
-
         foreach(var e in entities)
         {
-            e.AddSlotPosition(_pool.GetEntities(Matcher.SlotPosition).Length);
+            if(!e.hasSlotPosition)
+            {
+                e.AddSlotPosition(_pool.GetEntities(Matcher.SlotPosition).Length);
+            }
         }
     }
 

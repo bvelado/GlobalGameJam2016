@@ -13,9 +13,9 @@ public class CreateMonstersSystem : IInitializeSystem, ISetPool
     {
         for (int i = 0; i < PoolExtensions._monsters.Length; i++)
         {
-            if(i < 2)
+            if(i < 3)
             {
-                PoolExtensions.CreateMonster(_pool, i, i).IsAvailable(true).IsDisplayed(true);
+                PoolExtensions.CreateMonster(_pool, i, i).IsAvailable(true);
             } else
             {
                 PoolExtensions.CreateMonster(_pool, i, i);

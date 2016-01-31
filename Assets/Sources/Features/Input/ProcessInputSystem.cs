@@ -27,11 +27,12 @@ public class ProcessInputSystem : IReactiveSystem, ISetPool
             switch(e.input.intent)
             {
                 case InputIntent.ScrollLeft:
-
+                    _pool.slotManagerEntity.AddScrollSlot(false);
 
                     break;
 
                 case InputIntent.ScrollRight:
+                    _pool.slotManagerEntity.AddScrollSlot(true);
 
                     break;
 

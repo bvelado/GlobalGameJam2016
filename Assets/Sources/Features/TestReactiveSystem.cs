@@ -14,7 +14,7 @@ public class TestReactiveSystem : IReactiveSystem, ISetPool {
     {
         get
         {
-            return Matcher.AllOf(Matcher.Resource, Matcher.Monster).OnEntityAdded();
+            return Matcher.Monster.OnEntityAdded();
         }
     }
 
