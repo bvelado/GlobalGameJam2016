@@ -51,7 +51,11 @@ public class AddSlotView : IReactiveSystem, ISetPool
                 gameObject.GetComponent<RectTransform>().offsetMin = Vector2.zero;
                 gameObject.GetComponent<RectTransform>().offsetMax = Vector2.zero;
                 gameObject.transform.localScale = Vector3.one;
+
+                //gameObject.GetComponent<Button>();
+
                 e.AddSlotView(gameObject);
+                e.IsInteractable(true);
             }
         }
     }
