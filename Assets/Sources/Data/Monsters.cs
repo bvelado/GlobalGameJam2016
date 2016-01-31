@@ -25,4 +25,9 @@
     public const string Monster23 = "Sprites/Monsters/monster24";
     public const string Monster24 = "Sprites/Monsters/monster25";
     public const string Monster25 = "Sprites/Monsters/monster26";
+    public const string Monster26 = "Sprites/Monsters/monster27";
+    public const string Monster27 = "Sprites/Monsters/monster28";
+    public const string Monster28 = "Sprites/Monsters/monster29";
+    public const string Monster29 = "Sprites/Monsters/monster30";
+
 }

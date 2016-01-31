@@ -13,13 +13,7 @@ public class CreateMonstersSystem : IInitializeSystem, ISetPool
     {
         for (int i = 0; i < PoolExtensions._monsters.Length; i++)
         {
-            if(i < 3)
-            {
-                PoolExtensions.CreateMonster(_pool, i, i).IsAvailable(true);
-            } else
-            {
-                PoolExtensions.CreateMonster(_pool, i, i);
-            }
+            PoolExtensions.CreateMonster(_pool, i, i);
         }
     }
 }

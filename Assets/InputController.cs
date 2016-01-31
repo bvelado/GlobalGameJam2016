@@ -17,9 +17,4 @@ public class InputController : MonoBehaviour {
     {
         Pools.pool.ReplaceInput(InputIntent.Fuse);
     }
-
-    public void AddMonster(int slot)
-    {
-        
-    }
 }

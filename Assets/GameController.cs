@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour {
         _systems.Initialize();
 
         Pools.pool.CreateEntity().AddSlotManager(0);
+
+        InitGame();
     }
 
     void Update()
@@ -28,16 +30,32 @@ public class GameController : MonoBehaviour {
 #else
         return new Systems()
 #endif
+            /// INIT
+            // Init Fusion Manager
+            .Add(pool.CreateSystem<InitFusionManagerSystem>())
+
             // Monsters
             .Add(pool.CreateSystem<CreateMonstersSystem>())
 
+            // ...
             .Add(pool.CreateSystem<AddSlotPositionSystem>())
 
+            // Display newly discovered monsters
             .Add(pool.CreateSystem<DisplayCurrentAvailableMonstersSystem>())
 
-            .Add(pool.CreateSystem<AddSlotView>())
+            // Slot view
+            .Add(pool.CreateSystem<AddSlotViewSystem>())
             .Add(pool.CreateSystem<RemoveSlotViewSystem>())
-            .Add(pool.CreateSystem<MoveSlotViewSystem>())
+            .Add(pool.CreateSystem<UpdateSlotViewSystem>())
+
+            // Fusion view
+            .Add(pool.CreateSystem<AddFusionViewSystem>())
+            .Add(pool.CreateSystem<RemoveFusionViewSystem>())
+
+            // Fusion
+            .Add(pool.CreateSystem<ProcessFusionSystem>())
+
+            .Add(pool.CreateSystem<ScrollSlotsSystem>())
 
             // Views
             //.Add(pool.CreateSystem<AddSlotView>())
@@ -56,5 +74,16 @@ public class GameController : MonoBehaviour {
             // Test
             .Add(pool.CreateSystem<TestInitSystem>())
             .Add(pool.CreateSystem<TestReactiveSystem>());
+    }
+
+    void InitGame()
+    {
+        foreach(var e in Pools.pool.GetEntities(Matcher.Monster))
+        {
+            if(e.monster.id < 2)
+            {
+                e.IsAvailable(true);
+            }
+        }
     }
 }

@@ -25,7 +25,7 @@ public class MoveSlotViewSystem : IReactiveSystem, ISetPool
         
         foreach (var e in entities)
         {
-            if (e.hasScrollSlot)
+            /*if (e.hasScrollSlot)
             {
                 Group _availableMonstersGroup = _pool.GetGroup(Matcher.AllOf(Matcher.Available, Matcher.SlotPosition));
 
@@ -65,9 +65,7 @@ public class MoveSlotViewSystem : IReactiveSystem, ISetPool
                 }
 
                 e.RemoveScrollSlot();
-            }
-
-            Debug.Log(_pool.slotManager.minDisplayedPosition);
+            }*/
         }
     }
 }

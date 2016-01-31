@@ -1,6 +1,11 @@
 ﻿using Entitas;
+using UnityEngine;
+using System.Collections.Generic;
 
 public static class PoolExtensions {
+
+    public static Dictionary<int, int[]> _recettes = new Dictionary<int, int[]>();
+    public static Dictionary<int, int> _rand_id = new Dictionary<int, int>();
 
     public static readonly string[] _monsters = {
         Monsters.Monster0,
@@ -36,5 +41,29 @@ public static class PoolExtensions {
         return pool.CreateEntity()
             .AddMonster(id)
             .AddResource(_monsters[monsterIndex]);
+    }
+
+    public static Dictionary<int, int[]> InitRecipes()
+    {
+        int i = 2;
+        int x = 1;
+        int y = 0;
+
+        Dictionary<int, int[]> recipes = new Dictionary<int, int[]>();
+
+        recipes.Add(0, new int[] { 0, 0});
+        recipes.Add(1, new int[] { 1, 1 });
+        while(i < 76)
+        {
+            while(y < x)
+            {
+                recipes.Add(i, new int[] { x, y });
+                i++;
+                y++;
+            }
+            x++;
+        }
+
+        return recipes;
     }
 }

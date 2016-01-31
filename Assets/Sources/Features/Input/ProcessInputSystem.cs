@@ -37,11 +37,17 @@ public class ProcessInputSystem : IReactiveSystem, ISetPool
                     break;
 
                 case InputIntent.Fuse:
+                    List<int> fusableMonsters = new List<int>();
 
-                    break;
+                    foreach(var monster in _pool.GetEntities(Matcher.Fusable))
+                    {
+                        fusableMonsters.Add(monster.monster.id);
+                    }
 
-                case InputIntent.AddMonsterSlot:
-
+                    if(fusableMonsters.Count > 1)
+                    {
+                        _pool.fusionManagerEntity.AddProcessFusion(fusableMonsters[0], fusableMonsters[1]);
+                    }
 
                     break;
             }
