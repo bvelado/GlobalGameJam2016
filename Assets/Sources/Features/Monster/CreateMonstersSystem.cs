@@ -15,7 +15,7 @@ public class CreateMonstersSystem : IInitializeSystem, ISetPool
         {
             if(i < 2)
             {
-                PoolExtensions.CreateMonster(_pool, i, i).IsAvailable(true);
+                PoolExtensions.CreateMonster(_pool, i, i).IsAvailable(true).IsDisplayed(true);
             } else
             {
                 PoolExtensions.CreateMonster(_pool, i, i);

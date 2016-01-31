@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour {
 
         _systems = createSystems(Pools.pool);
         _systems.Initialize();
+
+        Pools.pool.CreateEntity().AddSlotManager(0);
     }
 
     void Update()
@@ -29,12 +31,19 @@ public class GameController : MonoBehaviour {
             // Monsters
             .Add(pool.CreateSystem<CreateMonstersSystem>())
 
-            // Views
+            .Add(pool.CreateSystem<AddSlotPositionSystem>())
+
+            .Add(pool.CreateSystem<DisplayCurrentAvailableMonstersSystem>())
+
             .Add(pool.CreateSystem<AddSlotView>())
 
+            // Views
+            //.Add(pool.CreateSystem<AddSlotView>())
+
             // Slots
-            .Add(pool.CreateSystem<CreateSlotsSystem>())
-            .Add(pool.CreateSystem<RenderSlotsSystem>())
+            //.Add(pool.CreateSystem<CreateSlotsSystem>())
+            //.Add(pool.CreateSystem<RenderSlotsSystem>())
+            //.Add(pool.CreateSystem<ScrollSlotsSystem>())
 
             // Inputs
             .Add(pool.CreateSystem<ProcessInputSystem>())
