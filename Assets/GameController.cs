@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour {
             .Add(pool.CreateSystem<DisplayCurrentAvailableMonstersSystem>())
 
             .Add(pool.CreateSystem<AddSlotView>())
+            .Add(pool.CreateSystem<RemoveSlotViewSystem>())
 
             // Views
             //.Add(pool.CreateSystem<AddSlotView>())
