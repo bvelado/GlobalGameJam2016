@@ -7,15 +7,17 @@ public static class ComponentIds {
     public const int Input = 5;
     public const int Interactable = 6;
     public const int Monster = 7;
-    public const int Resource = 8;
-    public const int ScrollSlot = 9;
-    public const int Slot = 10;
-    public const int SlotManager = 11;
-    public const int SlotPosition = 12;
-    public const int SlotView = 13;
-    public const int View = 14;
+    public const int RelativeSlotViewPosition = 8;
+    public const int Resource = 9;
+    public const int ScrollSlot = 10;
+    public const int Slot = 11;
+    public const int SlotManager = 12;
+    public const int SlotPosition = 13;
+    public const int SlotView = 14;
+    public const int UpdateSlotView = 15;
+    public const int View = 16;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
         "Available",
@@ -26,12 +28,14 @@ public static class ComponentIds {
         "Input",
         "Interactable",
         "Monster",
+        "RelativeSlotViewPosition",
         "Resource",
         "ScrollSlot",
         "Slot",
         "SlotManager",
         "SlotPosition",
         "SlotView",
+        "UpdateSlotView",
         "View"
     };
 
@@ -44,12 +48,14 @@ public static class ComponentIds {
         typeof(InputComponent),
         typeof(InteractableComponent),
         typeof(MonsterComponent),
+        typeof(RelativeSlotViewPositionComponent),
         typeof(ResourceComponent),
         typeof(ScrollSlotComponent),
         typeof(SlotComponent),
         typeof(SlotManagerComponent),
         typeof(SlotPositionComponent),
         typeof(SlotViewComponent),
+        typeof(UpdateSlotViewComponent),
         typeof(ViewComponent)
     };
 }

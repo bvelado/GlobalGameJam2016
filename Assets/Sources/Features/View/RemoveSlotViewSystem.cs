@@ -28,6 +28,11 @@ public class RemoveSlotViewSystem : IReactiveSystem, ISetPool {
             {
                 GameObject.Destroy(e.slotView.view);
                 e.RemoveSlotView();
+
+                if(e.hasRelativeSlotViewPosition)
+                {
+                    e.RemoveRelativeSlotViewPosition();
+                }
                 e.IsInteractable(false);
             }
         }
