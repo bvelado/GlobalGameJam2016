@@ -61,6 +61,7 @@ public class GameController : MonoBehaviour {
             .Add(pool.CreateSystem<PlayOneShotClipSystem>())
 
             // Timer
+            .Add(pool.CreateSystem<InitTimerSystem>())
             .Add(pool.CreateSystem<TimerSystem>())
 
             // Views
@@ -86,9 +87,6 @@ public class GameController : MonoBehaviour {
     {
         // Create the SlotManager entity
         Pools.pool.CreateEntity().AddSlotManager(0);
-
-        // Create the Timer entity
-        Pools.pool.CreateEntity().AddTimer(180.0f);
 
         // Set the first 2 monsters available
         foreach (var e in Pools.pool.GetEntities(Matcher.Monster))

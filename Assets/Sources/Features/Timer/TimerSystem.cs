@@ -1,41 +1,33 @@
 ﻿using UnityEngine;
 using Entitas;
-using System.Collections.Generic;
-using System;
+using UnityEngine.UI;
 
-public class TimerSystem : IReactiveSystem, IExecuteSystem ,ISetPool
+public class TimerSystem : IExecuteSystem, ISetPool
 {
-
     Pool _pool;
+
+    float minutes, seconds;
+    string m, s;
 
     public void SetPool(Pool pool)
     {
         _pool = pool;
     }
 
-    public void Execute(List<Entity> entities)
+    public void Execute()
     {
-        foreach (var e in entities)
+        if (_pool.timerEntity.isRunning)
         {
-            if(e.isRunning)
+            _pool.timer.secondsLeft -= Time.deltaTime;
+            if (_pool.timerEntity.hasTimerView)
             {
-                e.timer.secondsLeft -= Time.deltaTime;
+                minutes = Mathf.FloorToInt(_pool.timerEntity.timer.secondsLeft / 60);
+                seconds = Mathf.FloorToInt(_pool.timerEntity.timer.secondsLeft % 60);
+
+                m = minutes.ToString("00");
+                s = (seconds == 60) ? "00" : seconds.ToString("00");
+                _pool.timerEntity.timerView.view.GetComponentInChildren<Text>().text = m + ":" + s;
             }
         }
     }
-
-    public void Execute()
-    {
-        throw new NotImplementedException();
-    }
-
-    public TriggerOnEvent trigger
-    {
-        get
-        {
-            return Matcher.AllOf(Matcher.Timer, Matcher.Running).OnEntityAddedOrRemoved();
-        }
-    }
-
-    
 }

@@ -22,10 +22,11 @@ public static class ComponentIds {
     public const int SlotView = 20;
     public const int SoundManager = 21;
     public const int Timer = 22;
-    public const int UpdateSlotView = 23;
-    public const int View = 24;
+    public const int TimerView = 23;
+    public const int UpdateSlotView = 24;
+    public const int View = 25;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 26;
 
     public static readonly string[] componentNames = {
         "Available",
@@ -51,6 +52,7 @@ public static class ComponentIds {
         "SlotView",
         "SoundManager",
         "Timer",
+        "TimerView",
         "UpdateSlotView",
         "View"
     };
@@ -79,6 +81,7 @@ public static class ComponentIds {
         typeof(SlotViewComponent),
         typeof(SoundManagerComponent),
         typeof(TimerComponent),
+        typeof(TimerViewComponent),
         typeof(UpdateSlotViewComponent),
         typeof(ViewComponent)
     };
