@@ -29,10 +29,16 @@ public class ProcessInputSystem : IReactiveSystem, ISetPool
                 case InputIntent.ScrollLeft:
                     _pool.slotManagerEntity.AddScrollSlot(false);
 
+                    // Sound
+                    PoolExtensions.CreateSound(_pool, Sound.click1);
+
                     break;
 
                 case InputIntent.ScrollRight:
                     _pool.slotManagerEntity.AddScrollSlot(true);
+
+                    // Sound
+                    PoolExtensions.CreateSound(_pool, Sound.click2);
 
                     break;
 

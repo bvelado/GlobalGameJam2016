@@ -1,15 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Entitas;
 
-public class OneShotClipComponent : MonoBehaviour {
+public class OneShotClipComponent : IComponent {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

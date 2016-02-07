@@ -14,7 +14,5 @@ public class InitFusionManagerSystem : IInitializeSystem, ISetPool
     public void Initialize()
     {
         _pool.CreateEntity().AddFusionManager(PoolExtensions.InitRecipes());
-    }
-
-    
+    }   
 }

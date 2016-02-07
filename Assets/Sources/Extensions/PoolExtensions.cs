@@ -43,6 +43,13 @@ public static class PoolExtensions {
             .AddResource(_monsters[monsterIndex]);
     }
 
+    public static Entity CreateSound(Pool pool, string resource)
+    {
+        return pool.CreateEntity()
+            .AddResource(resource)
+            .IsOneShotClip(true);
+    }
+
     public static Dictionary<int, int[]> InitRecipes()
     {
         int i = 2;

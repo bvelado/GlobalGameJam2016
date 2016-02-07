@@ -10,18 +10,22 @@ public static class ComponentIds {
     public const int Input = 8;
     public const int Interactable = 9;
     public const int Monster = 10;
-    public const int ProcessFusion = 11;
-    public const int RelativeSlotViewPosition = 12;
-    public const int Resource = 13;
-    public const int ScrollSlot = 14;
-    public const int Slot = 15;
-    public const int SlotManager = 16;
-    public const int SlotPosition = 17;
-    public const int SlotView = 18;
-    public const int UpdateSlotView = 19;
-    public const int View = 20;
+    public const int OneShotClip = 11;
+    public const int ProcessFusion = 12;
+    public const int RelativeSlotViewPosition = 13;
+    public const int Resource = 14;
+    public const int Running = 15;
+    public const int ScrollSlot = 16;
+    public const int Slot = 17;
+    public const int SlotManager = 18;
+    public const int SlotPosition = 19;
+    public const int SlotView = 20;
+    public const int SoundManager = 21;
+    public const int Timer = 22;
+    public const int UpdateSlotView = 23;
+    public const int View = 24;
 
-    public const int TotalComponents = 21;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
         "Available",
@@ -35,14 +39,18 @@ public static class ComponentIds {
         "Input",
         "Interactable",
         "Monster",
+        "OneShotClip",
         "ProcessFusion",
         "RelativeSlotViewPosition",
         "Resource",
+        "Running",
         "ScrollSlot",
         "Slot",
         "SlotManager",
         "SlotPosition",
         "SlotView",
+        "SoundManager",
+        "Timer",
         "UpdateSlotView",
         "View"
     };
@@ -59,14 +67,18 @@ public static class ComponentIds {
         typeof(InputComponent),
         typeof(InteractableComponent),
         typeof(MonsterComponent),
+        typeof(OneShotClipComponent),
         typeof(ProcessFusionComponent),
         typeof(RelativeSlotViewPositionComponent),
         typeof(ResourceComponent),
+        typeof(RunningComponent),
         typeof(ScrollSlotComponent),
         typeof(SlotComponent),
         typeof(SlotManagerComponent),
         typeof(SlotPositionComponent),
         typeof(SlotViewComponent),
+        typeof(SoundManagerComponent),
+        typeof(TimerComponent),
         typeof(UpdateSlotViewComponent),
         typeof(ViewComponent)
     };

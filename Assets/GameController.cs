@@ -13,8 +13,6 @@ public class GameController : MonoBehaviour {
         _systems = createSystems(Pools.pool);
         _systems.Initialize();
 
-        Pools.pool.CreateEntity().AddSlotManager(0);
-
         InitGame();
     }
 
@@ -31,8 +29,9 @@ public class GameController : MonoBehaviour {
         return new Systems()
 #endif
             /// INIT
-            // Init Fusion Manager
+            // Inits
             .Add(pool.CreateSystem<InitFusionManagerSystem>())
+            .Add(pool.CreateSystem<InitSoundManagerSystem>())
 
             // Monsters
             .Add(pool.CreateSystem<CreateMonstersSystem>())
@@ -55,7 +54,14 @@ public class GameController : MonoBehaviour {
             // Fusion
             .Add(pool.CreateSystem<ProcessFusionSystem>())
 
+            //
             .Add(pool.CreateSystem<ScrollSlotsSystem>())
+
+            // Sound
+            .Add(pool.CreateSystem<PlayOneShotClipSystem>())
+
+            // Timer
+            .Add(pool.CreateSystem<TimerSystem>())
 
             // Views
             //.Add(pool.CreateSystem<AddSlotView>())
@@ -78,12 +84,23 @@ public class GameController : MonoBehaviour {
 
     void InitGame()
     {
-        foreach(var e in Pools.pool.GetEntities(Matcher.Monster))
+        // Create the SlotManager entity
+        Pools.pool.CreateEntity().AddSlotManager(0);
+
+        // Create the Timer entity
+        Pools.pool.CreateEntity().AddTimer(180.0f);
+
+        // Set the first 2 monsters available
+        foreach (var e in Pools.pool.GetEntities(Matcher.Monster))
         {
             if(e.monster.id < 2)
             {
                 e.IsAvailable(true);
             }
         }
+
+        // Start playing the background music
+        Pools.pool.soundManager.manager.GetComponent<AudioSource>().clip = Resources.Load<AudioClip>(Sound.backgroundMusic);
+        Pools.pool.soundManager.manager.GetComponent<AudioSource>().Play();
     }
 }
